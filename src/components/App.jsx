@@ -22,6 +22,20 @@ export class App extends Component{
     filter: '',
   }
   
+ 
+  componentDidMount() {
+    const getData = JSON.parse(localStorage.getItem('contacts')); 
+    if (getData) {
+      this.setState({contacts: getData})
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.contacts !== prevState.contacts) {
+          localStorage.setItem('contacts', JSON.stringify(this.state.contacts))
+    }
+  }
+
   handleSubmit = (values, { resetForm }) => {
     this.addNewContact(values)
     resetForm()
