@@ -47,11 +47,7 @@ export class App extends Component{
       number
     }
       if (this.state.contacts.map((({name}) => name.toLowerCase())).includes(name.toLowerCase())) {
-       Swal.fire({
-  title: `${name} is already in contacts.`,
-  icon: 'info',
-  confirmButtonText: 'Okay'
-         })
+        alert(`${name} is already in contacts.`);
       } else {
         this.setState(prevState => ({
       contacts: [newContact, ...prevState.contacts]
