@@ -2,7 +2,6 @@ import { Component } from "react";
 import { ThemeProvider } from 'styled-components'
 import { theme } from 'theme/theme';
 import { nanoid } from "nanoid";
-import Swal from "sweetalert2";
 
 import { Container } from "./Container/Container";
 import { MainTitle } from './Titles/MainTitle/MainTitle'
